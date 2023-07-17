@@ -21,7 +21,8 @@ for f in fnames:
 
     for event in reader:
         if max_events > 0 and i >= max_events: break
-        if i%100 == 0: print("Processing event %i."%i)
+        if i%100 == 0:
+            print("Processing event %i."%i)
 
         # Get the collections we care about
         mcpCollection = event.getCollection("MCParticle")
@@ -29,7 +30,6 @@ for f in fnames:
 
         # Loop over the reconstructed objects and fill histograms
         for pfo in pfoCollection:
-            dir(pfo)
             pfo_p = pfo.getMomentum()
             pfo_tlv = ROOT.TLorentzVector()
             pfo_tlv.SetPxPyPzE(pfo_p[0], pfo_p[1], pfo_p[2], pfo.getEnergy())
