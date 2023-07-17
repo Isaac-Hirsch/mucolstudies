@@ -29,6 +29,7 @@ for f in fnames:
 
         # Loop over the reconstructed objects and fill histograms
         for pfo in pfoCollection:
+            dir(pfo)
             pfo_p = pfo.getMomentum()
             pfo_tlv = ROOT.TLorentzVector()
             pfo_tlv.SetPxPyPzE(pfo_p[0], pfo_p[1], pfo_p[2], pfo.getEnergy())
