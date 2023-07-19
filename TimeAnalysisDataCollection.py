@@ -81,19 +81,16 @@ for f in fnames:
             #Get hits within the collection
             for hit in event.getCollection(collection):
                 #Writing pointers to all the data for each hit
-                x_pos[0]=hit.getPositionVec.X()
-                y_pos[0]=hit.getPositionVec.Y()
-                z_pos[0]=hit.getPositionVec.Z()
+                x_pos[0]=hit.getPositionVec().X()
+                y_pos[0]=hit.getPositionVec().Y()
+                z_pos[0]=hit.getPositionVec().Z()
                 time[0]=hit.getTime()
-                
                 #Decoder
                 cellID = int(hit.getCellID0())
                 decoder.setValue(cellID)
                 layer[0] = decoder['layer'].value()
                 system[0] = decoder["system"].value()
                 side[0] = decoder["side"].value()
-                if i%100==1:
-                    print(hit.getPositionVec.X(),hit.getPositionVec.Y(),hit.getPositionVec.Z())
                 #Filling the data from the pointers into the tree
                 tree.Fill()
 
