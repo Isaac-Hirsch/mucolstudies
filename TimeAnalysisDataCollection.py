@@ -11,8 +11,8 @@ Bfield = 3.56  # T
 parser = OptionParser()
 parser.add_option('-i', '--inFile', help='--inFile Output_REC.slcio',
                   type=str, default='Output_REC.slcio')
-parser.add_option('-o', '--outFile', help='--outFile ntup_tracks.root',
-                  type=str, default='ntup_tracks.root')
+parser.add_option('-o', '--outFile', help='--outFile ntup_hits.root',
+                  type=str, default='ntup_hits.root')
 (options, args) = parser.parse_args()
 
 tree = TTree("tracks_tree", "tracks_tree")
@@ -47,13 +47,21 @@ fnames = glob.glob("/data/fmeloni/DataMuC_MuColl_v1/muonGun/reco/*.slcio")
 #fnames = glob.glob("/data/fmeloni/DataMuC_MuColl_v1/muonGun/recoBIB/*.slcio")
 
 #List of collections we want to use:
+#collections=[
+#    "VertexBarrelCollection",
+#    "VertexEndcapCollection",
+#    "InnerTrackerBarrelCollection",
+#    "InnerTrackerEndcapCollection",
+#    "OuterTrackerBarrelCollection",
+#    "OuterTrackerEndcapCollection"
+#]
 collections=[
-    "VertexBarrelCollection",
-    "VertexEndcapCollection",
-    "InnerTrackerBarrelCollection",
-    "InnerTrackerEndcapCollection",
-    "OuterTrackerBarrelCollection",
-    "OuterTrackerEndcapCollection"
+    "VBTrackerHits",
+    "VETrackerHits",
+    "IBTrackerHits",
+    "IETrackerHits",
+    "OBTrackerHits",
+    "OETrackerHits"
 ]
 
 # Loop over files
