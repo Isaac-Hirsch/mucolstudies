@@ -6,8 +6,8 @@ from scipy.stats import norm
 
 treeBIB=uproot.open("/work/isaac-hirsch/mucolstudies/ntup_hits.root")["tracks_tree"]
 
-percentile=0.01 #write in fractional form (0<=percentile<=1)
-bins=20
+percentile=0.1 #write in fractional form (0<=percentile<=1)
+bins=40
 
 #time series has a hard start time at -0.1 ns in the vertex and -0.2 ns in the inner and outer detectors. 
 #It also has a hard end time of 0.15 ns in the vertex and 0.3 ns in the inner and outer detectors
