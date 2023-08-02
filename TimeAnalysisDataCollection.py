@@ -41,10 +41,10 @@ tree.Branch("side", side, 'var/D')
 
 #Comment out one of the two fnames definitions to run the other
 #No BIB input files
-fnames = glob.glob("/data/fmeloni/DataMuC_MuColl_v1/muonGun/reco/*.slcio")
+#fnames = glob.glob("/data/fmeloni/DataMuC_MuColl_v1/muonGun/reco/*.slcio")
 
 #BIB input files
-#fnames = glob.glob("/data/fmeloni/DataMuC_MuColl_v1/muonGun/recoBIB/*.slcio")
+fnames = glob.glob("/data/fmeloni/LegacyProductions/before29Jul23/DataMuC_MuColl_v1/muonGun/recoBIB/muonGun_reco_1[123]0.slcio")
 
 #List of collections we want to use:
 #collections=[
@@ -72,7 +72,7 @@ for f in fnames:
 
     #Loop over events
     for event in reader:
-        i+=1
+        print(i)
         if i %100 ==1:
             print("Reading event ",i)
 
